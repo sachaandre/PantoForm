@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Articles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom Français</th>
+      <th>Nom Anglais</th>
+      <th>Nom Chinois</th>
+      <th>Dates Clés</th>
+      <th>Indefinition</th>
+      <th>Tags</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.fr_name %></td>
+        <td><%= article.en_name %></td>
+        <td><%= article.zh_name %></td>
+        <td><%= article.date %></td>
+        <td><%= article.content %></td>
+        <td><%= article.tags %></td>
+        <td><%= link_to 'Show', article %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Article', new_article_path %>
