@@ -6,13 +6,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
   </head>
 
   <body>
     <header>
-      <%= link_to 'Articles', articles_path%>
-      <%= link_to 'Auteurs', authors_path%>
+      <nav>
+        <%= link_to 'Articles', articles_path%>
+        <%= link_to 'Auteurs', authors_path%>
+      </nav>
+      <h1>PantoForm</h1>
     </header>
+
     <%= yield %>
   </body>
 </html>
