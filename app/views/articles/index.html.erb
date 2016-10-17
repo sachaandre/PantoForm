@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Articles</h1>
-
+<%= link_to 'New Article', new_article_path %>
 <table>
   <thead>
     <tr>
+      <th>Nom</th>
       <th>Nom Français</th>
       <th>Nom Anglais</th>
       <th>Nom Chinois</th>
@@ -18,6 +19,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <td><%= article.author.first_name + ' ' + article.author.last_name%></td>
         <td><%= article.fr_name %></td>
         <td><%= article.en_name %></td>
         <td><%= article.zh_name %></td>
@@ -34,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Article', new_article_path %>
+

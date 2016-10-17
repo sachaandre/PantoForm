@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h2>Profil de <%= @author.full_name %></h2>
 <p>
   <strong>First name:</strong>
   <%= @author.first_name %>
@@ -9,6 +9,13 @@
   <strong>Last name:</strong>
   <%= @author.last_name %>
 </p>
+
+<h2>Liste d'articles de <%= @author.full_name%></h2>
+<ul>
+  <% @author.articles.each do |a|%>
+    <li><%= link_to a.fr_name, a%></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>
