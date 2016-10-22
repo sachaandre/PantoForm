@@ -1,4 +1,5 @@
 $font-text: 'Cormorant Garamond', serif
+$title: 'PT Sans', sans-serif
 $color_red: #e43725
 $color_white: #fff
 $color_green: #2ecc71
@@ -6,7 +7,7 @@ $color_green: #2ecc71
 body
   background-color: $color_white
   color: #333
-  font-family: verdana, arial, helvetica, sans-serif
+  font-family: $title
   font-size: 13px
   line-height: 18px
   margin: 0
@@ -74,7 +75,6 @@ div
 
   h2
     text-align: left
-    font-weight: bold
     padding: 5px 5px 5px 15px
     font-size: 12px
     margin: -7px
@@ -92,6 +92,15 @@ div
 label
   display: block
 
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////                       PARTIE AJOUTEE                     //////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//////////                     HEADER                              /////////////
+////////////////////////////////////////////////////////////////////////////////
 header
   display: flex
   justify-content: space-between
@@ -112,14 +121,16 @@ header
       width: 10%
       margin: 5px
       text-decoration: none
-      transition: 0.2s all
+      transition: 0.12s all
+      font-family: $font-text
+      font-weight: bold
 
       &:visited
         color: $color_white
 
       &:hover
         background-color: $color_green
-        padding: 15px
+        padding: 13px
 
   h1
     order: 2
