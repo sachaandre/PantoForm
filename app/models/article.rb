@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+
   belongs_to :author
 
   def set_author!(author)
