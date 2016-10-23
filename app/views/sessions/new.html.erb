@@ -2,12 +2,25 @@
   <div class="container">
     <div class="form">
 
-      <h1>Log in</h1>
+      <h2>Bienvenue sur PantoForm !</h2>
       <%= form_for(:session, url: signin_path) do |f| %>
-        <%= f.email_field :email, :placeholder => "Email" %>
-        <%= f.password_field :password, :placeholder => "Password" %>
-        <%= f.submit "Log in", class: "btn-submit" %>
+        <div>
+          <%= f.label 'Votre Email', :class => 'form_label'%>
+          <%= f.email_field :email, :placeholder => "Email", :class => 'field' %>
+        </div>
+
+        <div>
+          <%= f.label 'Votre Mot de Passe', :class => 'form_label'%>
+          <%= f.password_field :password, :placeholder => "Password", :class => 'field' %>
+
+        </div>
+        <div>
+          <%= f.submit "Connectez vous !", :class => "form_btn"%>
+        </div>
       <% end %>
+      <h2>Pas encore inscrit ?</h2>
+        <%= link_to "Inscrivez vous !", '/signup', :class => "form_btn"%>
+
 
     </div>
   </div>
