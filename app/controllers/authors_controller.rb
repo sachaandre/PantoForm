@@ -1,4 +1,5 @@
 class AuthorsController < ApplicationController
+  before_action :require_user, only: [:index, :show]
   before_action :set_author, only: [:show, :edit, :update, :destroy]
 
   # GET /authors
