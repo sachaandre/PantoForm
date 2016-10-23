@@ -10,20 +10,21 @@
   </head>
 
   <body>
+
+    <div class="login_bar">
+      <% if current_author %>
+        <ul>
+          <li><%= 'Bienvenue ' + current_author.full_name %></li>
+          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+        </ul>
+      <% else %>
+        <ul>
+          <li><%= link_to "Login", 'signin' %></a></li>
+          <li><%= link_to "Signup", 'signup' %></a></li>
+        </ul>
+      <% end %>
+    </div>
     <header>
-      <div class="login_bar">
-        <% if current_author %>
-          <ul>
-            <li><%= 'Bienvenue ' + current_author.full_name %></li>
-            <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-          </ul>
-        <% else %>
-          <ul>
-            <li><%= link_to "Login", 'signin' %></a></li>
-            <li><%= link_to "Signup", 'signup' %></a></li>
-          </ul>
-        <% end %>
-      </div>
       <nav>
         <%= link_to 'Articles', articles_path%>
         <%= link_to 'Auteurs', authors_path%>

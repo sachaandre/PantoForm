@@ -3,13 +3,15 @@ $title: 'PT Sans', sans-serif
 $color_red: #e43725
 $color_white: #fff
 $color_green: #2ecc71
+$color_grey: #333
+$color_light_white: rgba(255,255,255,0.9)
 
 body
   color: #fff
   font-family: $title
   font-size: 13px
   line-height: 18px
-  margin: 0
+  margin: 0px
 
 
 p, ol, ul, td
@@ -100,6 +102,32 @@ label
 ////////////////////////////////////////////////////////////////////////////////
 //////////                     HEADER                              /////////////
 ////////////////////////////////////////////////////////////////////////////////
+
+.login_bar
+  display: block
+  margin: 0
+  height: 30px
+  background: $color_green
+
+  ul
+    margin: 0px
+    text-align: right
+  li
+    display: inline-block
+    font-family: $title
+    margin-right: 10px
+
+    a
+      color: $color_white
+      text-decoration: none
+      height: 100%
+      transition: 0.12s all
+
+      &:hover
+        background-color: $color_grey
+        padding: 10px
+
+
 header
   display: flex
   justify-content: space-between
@@ -108,7 +136,7 @@ header
   width: 100%
   height: 50px
   margin: 0 auto
-  border-top: 5px solid $color_green
+  border-top: 5px solid $color_grey
 
   nav
     order: 1
@@ -128,7 +156,7 @@ header
         color: $color_white
 
       &:hover
-        background-color: $color_green
+        background-color: $color_grey
         padding: 13px
 
   h1
@@ -140,9 +168,14 @@ header
 
 
 ////////////////////////////////////////////////////////////////////////////////
-//////////////         AUTEURS - LISTE             /////////////////////////////
+//////////////         CONTENT                     /////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-
+.content
+  margin: 50px
+  padding: 20px
+  background: $color_light_white
+  color: $color_grey
+  border: 5px solid $color_grey
 
 
