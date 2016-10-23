@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20161021155413) do
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
+    t.integer  "author_id"
     t.string   "fr_name"
     t.string   "en_name"
     t.string   "zh_name"
@@ -24,28 +25,16 @@ ActiveRecord::Schema.define(version: 20161021155413) do
     t.string   "tags"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "author_id"
     t.index ["author_id"], name: "index_articles_on_author_id", using: :btree
   end
 
   create_table "authors", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "password_digest"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.index ["email"], name: "index_authors_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_authors_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "articles", "authors"

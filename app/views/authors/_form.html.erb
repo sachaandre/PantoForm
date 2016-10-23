@@ -1,4 +1,4 @@
-<%= form_for(author) do |f| %>
+  <%= form_for(author) do |f| %>
   <% if author.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(author.errors.count, "error") %> prohibited this author from being saved:</h2>
@@ -13,15 +13,31 @@
 
   <div class="field">
     <%= f.label 'Prénom' %>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, :placeholder => 'Prénom' %>
   </div>
 
   <div class="field">
     <%= f.label 'Nom'%>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, :placeholder => 'Nom' %>
   </div>
 
+  <div class="field">
+    <%= f.label 'Email'%>
+    <%= f.email_field :email, :placeholder => 'Adresse Mail' %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Password'%>
+    <%= f.password_field :password, :placeholder => 'Mot de Passe' %>
+  </div>
+    <div class="field">
+    <%= f.label 'Password Confirmation'%>
+    <%= f.password_field :password_confirmation, :placeholder => 'Confirmez votre mot de passe' %>
+  </div>
+
+
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Créer un compte" %>
   </div>
 <% end %>
