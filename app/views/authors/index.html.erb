@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Liste des différents auteurs</h1>
-<p>
-  <ul>
-    <% @authors.each do |a| %>
-      <li><%= link_to a.full_name, a %></li>
-    <% end %>
-  </ul>
-</p>
 
-<%= link_to 'New Author', new_author_path %>
+  <h1>Liste des différents auteurs</h1>
+  <p>
+    <ul>
+      <% @authors.each do |a| %>
+        <li><%= link_to a.full_name, a %></li>
+      <% end %>
+    </ul>
+  </p>
+
+

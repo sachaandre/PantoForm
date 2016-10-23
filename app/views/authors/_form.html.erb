@@ -11,33 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div>
     <%= f.label 'Prénom' %>
-    <%= f.text_field :first_name, :placeholder => 'Prénom' %>
+    <%= f.text_field :first_name, :placeholder => 'Prénom', :class => "field" %>
   </div>
 
-  <div class="field">
+  <div>
     <%= f.label 'Nom'%>
-    <%= f.text_field :last_name, :placeholder => 'Nom' %>
+    <%= f.text_field :last_name, :placeholder => 'Nom', :class => "field" %>
   </div>
 
-  <div class="field">
+  <div>
     <%= f.label 'Email'%>
-    <%= f.email_field :email, :placeholder => 'Adresse Mail' %>
+    <%= f.email_field :email, :placeholder => 'Adresse Mail', :class => "field" %>
   </div>
 
-  <div class="field">
+  <div>
     <%= f.label 'Password'%>
-    <%= f.password_field :password, :placeholder => 'Mot de Passe' %>
+    <%= f.password_field :password, :placeholder => 'Mot de Passe', :class => "field" %>
   </div>
-    <div class="field">
+    <div>
     <%= f.label 'Password Confirmation'%>
-    <%= f.password_field :password_confirmation, :placeholder => 'Confirmez votre mot de passe' %>
+    <%= f.password_field :password_confirmation, :placeholder => 'Confirmez votre mot de passe', :class => "field" %>
   </div>
 
 
 
-  <div class="actions">
-    <%= f.submit "Créer un compte" %>
+  <div>
+    <%= f.submit "Créer un compte", :class => "form_btn" %>
   </div>
 <% end %>

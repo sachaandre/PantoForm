@@ -3,29 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $color_green: #2ecc71
 $color_red: #e43725
-$color_light_red: rgba(255,55,37,0.07)
+$color_grey: #333
+$color_light_red: rgba(255,55,37,0.65)
 $title: 'PT Sans', sans-serif
 $font-text: 'Cormorant Garamond', serif
 
+body
+  background: image-url('bcg.jpg')
+  background-size: 100%
+  background-position: cover
+  z-index: 0
 
-.signin
-  margin: 100px auto
-  height: 400px
+.signform
+  margin: auto
+  padding: 20px 0px
+  height: auto
   width: 400px
   display: flex
   flex-direction : column
   justify-content : center
   align-items: center
-  border: 5px solid $color_red
-  border-radius: 3px
-  background-color: $color_light_red
 
   .field, .form_btn, .form_label
     margin: 5px 20px
 
   .form_btn
-    background-color: $color_red
-    border: 3px solid $color_red
+    background-color: $color_grey
+    border: 3px solid $color_grey
     border-radius: 3px
     color: #fff
     padding: 5px
@@ -41,7 +45,7 @@ $font-text: 'Cormorant Garamond', serif
   .field
     height: 30px
     width: 200px
-    border: 2px solid $color_red
+    border: 3px solid $color_grey
     border-radius: 3px
     font-size: 16px
     font-family: $font-text
