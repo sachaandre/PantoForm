@@ -4,22 +4,16 @@
   <strong>Nom de l'Auteur</strong>
    @author.first_name
 </p>-->
+<div class="banner">
+  <h2><%= @article.fr_name %></h2>
 
-<p>
-  <strong>Nom Français</strong>
-  <%= @article.fr_name %>
-</p>
-
-<p>
-  <strong>Nom Anglais</strong>
-  <%= @article.en_name %>
-</p>
-
-<p>
-  <strong>Nom Chinois</strong>
-  <%= @article.zh_name %>
-</p>
-
+  <p>
+    <strong>Nom Anglais</strong>
+    <%= @article.en_name %>
+    <strong>Nom Chinois</strong>
+    <%= @article.zh_name %>
+  </p>
+</div>
 <p>
   <strong>Dates Clés</strong>
   <%= @article.date %>

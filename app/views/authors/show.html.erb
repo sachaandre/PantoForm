@@ -1,15 +1,7 @@
 <p id="notice"><%= notice %></p>
-<h2>Profil de <%= @author.full_name %></h2>
-<p>
-  <strong>First name:</strong>
-  <%= @author.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @author.last_name %>
-</p>
-
+<div class="banner">
+  <h2>Profil de <%= @author.full_name %></h2>
+</div>
 <h2>Liste d'articles de <%= @author.full_name%></h2>
 <ul>
   <% @author.articles.each do |a|%>
