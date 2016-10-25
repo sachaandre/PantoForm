@@ -42,8 +42,39 @@
     <%= f.text_field :tags %>
   </div>
 
+  <div class="field">
+    <%= f.label 'Thème Pantopie 1'%>
+    <%= f.collection_select(:theme_ids, Theme.all, :id, :name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Thème Pantopie 2'%>
+    <%= f.collection_select(:theme_ids, Theme.all, :id, :name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Thème Pantopie 3'%>
+    <%= f.collection_select(:theme_ids, Theme.all, :id, :name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Thème Pantopie 4'%>
+    <%= f.collection_select(:theme_ids, Theme.all, :id, :name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Thème Pantopie 5'%>
+    <%= f.collection_select(:theme_ids, Theme.all, :id, :name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Thème Pantopie 6'%>
+    <%= f.collection_select(:theme_ids, Theme.all, :id, :name)%>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
 </div>

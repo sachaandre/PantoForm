@@ -3,7 +3,7 @@
 <h2>Index des articles</h2>
 <ul>
   <% @articles.each do |ar| %>
-    <li><%= link_to ar.fr_name, ar %></li>
+    <li><%= link_to ar.fr_name, ar %>  <%= link_to 'Destroy', ar, method: :delete, data: { confirm: 'Are you sure?' } %></li>
   <%end%>
 </ul>
 
