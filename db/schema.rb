@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161025183517) do
+ActiveRecord::Schema.define(version: 20161026093738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "article_themes", force: :cascade do |t|
+    t.integer  "article_id"
+    t.integer  "theme_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_article_themes_on_article_id", using: :btree
+    t.index ["theme_id"], name: "index_article_themes_on_theme_id", using: :btree
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string   "fr_name"
@@ -28,12 +37,6 @@ ActiveRecord::Schema.define(version: 20161025183517) do
     t.index ["author_id"], name: "index_articles_on_author_id", using: :btree
   end
 
-  create_table "articles_themes", id: false, force: :cascade do |t|
-    t.integer "article_id"
-    t.integer "theme_id"
-    t.index ["article_id"], name: "index_articles_theme_on_article_id", using: :btree
-    t.index ["theme_id"], name: "index_articles_theme_on_theme_id", using: :btree
-  end
 
   create_table "authors", force: :cascade do |t|
     t.string   "first_name"
@@ -55,7 +58,7 @@ ActiveRecord::Schema.define(version: 20161025183517) do
     t.index ["reset_password_token"], name: "index_authors_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "themes", id: :integer, default: 100, force: :cascade do |t|
+  create_table "themes", id: :integer, force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false

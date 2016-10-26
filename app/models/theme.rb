@@ -1,8 +1,9 @@
 class Theme < ApplicationRecord
-  has_and_belongs_to_many :articles
+  has_many :articles_themes
+  has_many :articles, through: :articles_themes
 
   def full_theme
-    id + '. ' + name
+    id.to_s + '. ' + name
   end
 
 end
