@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Id:</strong>
-  <%= @theme.id %>
-</p>
+<div class="banner">
+  <h2><%= @theme.full_theme %></h2>
+</div>
 
 <p>
-  <strong>Name:</strong>
-  <%= @theme.name %>
+  <strong>Articles Associés à ce thème</strong>
+  <ul>
+    <%@theme.articles.each do |t|%>
+      <li><%= link_to t.fr_name, t%></li>
+    <%end%>
+  </ul>
 </p>
 
-<%= link_to 'Edit', edit_theme_path(@theme) %> |
 <%= link_to 'Back', themes_path %>

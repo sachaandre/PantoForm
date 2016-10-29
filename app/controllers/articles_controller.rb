@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all.order(:fr_name)
+    @articles, @alphaParams = Article.all.alpha_paginate(params[:letter]){|art| art.fr_name}
   end
 
   # GET /articles/1
@@ -29,7 +29,6 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.author = current_author
-    @article.theme_ids = @theme.id
 
     respond_to do |format|
       if @article.save

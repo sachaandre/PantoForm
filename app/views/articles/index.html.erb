@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h2>Index des articles</h2>
-<ul>
-  <% @articles.each do |ar| %>
-    <li><%= link_to ar.fr_name, ar %>  <%= link_to 'Destroy', ar, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-  <%end%>
-</ul>
 
+<%= alphabetical_paginate @alphaParams%>
+<div id="pagination_table">
+  <ul>
+    <% @articles.each do |art| %>
+      <li><%= link_to art.fr_name, art %>  <%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <%end%>
+  </ul>
+</div>
 
 <br>
 
