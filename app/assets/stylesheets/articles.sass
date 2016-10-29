@@ -1,6 +1,43 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$color_red: #e43725
+$color_white: #fff
+$color_green: #2ecc71
+$color_grey: #333
+$color_light_red: rgba(255,55,37,0.65)
 
 body
   background-color: #fff
+
+.pagination
+  ul
+    display: flex
+    flex-flow: row wrap
+    margin: 10px
+
+    li
+      list-style: none
+      padding: 10px
+      background-color: $color_light_red
+
+      a
+        color: $color_white
+        text-decoration: none
+
+        &:hover
+          background-color: $color_green
+
+      &:hover
+        background-color: $color_green
+
+      .active
+        background-color: $color_red
+
+#pagination_table
+  display: flex
+  flex-flow: row wrap
+  list-style: none
+
+  li
+    list-style: circle

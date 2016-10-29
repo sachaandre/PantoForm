@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles, @alphaParams = Article.all.alpha_paginate(params[:letter]){|art| art.fr_name}
+    @articles, @alphaParams = Article.all.alpha_paginate(params[:letter], {:js => false}){|art| art.fr_name}
   end
 
   # GET /articles/1
