@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h2>Index des thèmes de la Pantopie</h2>
+
 <p class="desc"> Tirés du site de la <a href="pantopie.org">Pantopie</a>, ces thèmes classent ici les articles selon chaque dimensions auxquelles elles sont associées</p>
-  <ul>
-    <% @themes.each do |theme| %>
-      <li>
-        <%= link_to theme.full_theme, theme%>
-        <%= link_to 'Edit', edit_theme_path(theme) %>
-      </li>
-    <% end %>
-  </ul>
+
+<ul class="theme_display">
+  <% @themes.each do |theme| %>
+    <li>
+      <%= link_to theme.full_theme, theme%>
+    </li>
+  <% end %>
+</ul>
