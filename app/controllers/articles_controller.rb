@@ -11,6 +11,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @article = Article.find(params[:id])
+    @theme = @article.themes
   end
 
   # GET /articles/new
@@ -27,6 +29,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.author = current_author
+    @article.theme_ids = @theme.id
 
     respond_to do |format|
       if @article.save

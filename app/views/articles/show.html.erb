@@ -31,7 +31,7 @@
 
 <p>
   <strong>Thèmes liés</strong>
-  <%=@article.themes.find(params[:name])%>
+  <%=@article.themes.ids%>
 </p>
 
 <p>Voir les articles de <%= link_to @article.author.full_name, @article.author%></p>

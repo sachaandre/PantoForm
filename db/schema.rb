@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20161026093738) do
     t.index ["author_id"], name: "index_articles_on_author_id", using: :btree
   end
 
+  create_table "articles_themes", force: :cascade do |t|
+  end
 
   create_table "authors", force: :cascade do |t|
     t.string   "first_name"
