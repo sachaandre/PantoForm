@@ -6,4 +6,5 @@ class Theme < ApplicationRecord
     id.to_s + '. ' + name
   end
 
+
 end

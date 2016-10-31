@@ -13,44 +13,41 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :fr_name %>
+    <%= f.label "Nom du sujet en Français" %>
     <%= f.text_field :fr_name %>
   </div>
 
   <div class="field">
-    <%= f.label :en_name %>
+    <%= f.label "Nom du sujet en Anglais" %>
     <%= f.text_field :en_name %>
   </div>
 
   <div class="field">
-    <%= f.label :zh_name %>
+    <%= f.label "Nom du sujet en Chinois (Caractères)" %>
     <%= f.text_field :zh_name %>
   </div>
 
   <div class="field">
-    <%= f.label :date %>
+    <%= f.label "Dates clées du sujet" %>
     <%= f.text_field :date %>
   </div>
 
   <div class="field">
-    <%= f.label :content %>
+    <%= f.label "(In)Définition de votre sujet" %>
     <%= f.text_area :content %>
   </div>
 
   <div class="field">
-    <%= f.label :tags %>
+    <%= f.label "Quelques tags ?" %>
     <%= f.text_field :tags %>
   </div>
 
   <div class="field">
-    <%= f.label 'Thème Pantopie 1'%>
-    <%= f.collection_select(:theme_ids, Theme.all, :id, :full_theme, {include_blank: true})%>
+    <%= f.label "Thèmes de la Pantopie se rapportant à cet article" %>
+    <%= f.collection_select(:theme_ids, Theme.all, :id, :full_theme, {include_blank: true}, {:multiple=>true, size: "3"})%>
+    <%= f.collection_select(:theme_ids, Theme.all, :id, :full_theme, {include_blank: true}, {:multiple=>true, size: "3"})%>
   </div>
 
-  <!--<div class="field">
-    <%= f.label 'Thème Pantopie 2'%>
-    <%= f.collection_select(:theme_ids, Theme.all.order(:id), :id, :name)%>
-  </div> -->
 
 
   <div class="actions">
