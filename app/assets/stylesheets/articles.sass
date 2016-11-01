@@ -1,11 +1,11 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$color_red: #e43725
+$color_red: #FF9C1C
 $color_white: #fff
-$color_green: #2ecc71
+$color_green: #1CAFFF
 $color_grey: #333
-$color_light_red: rgba(255,55,37,0.65)
+$color_light_red: rgba(255,156,28,0.65)
 $border: 3px solid $color_grey
 $title: 'PT Sans', sans-serif
 $font-text: 'Cormorant Garamond', serif
@@ -46,7 +46,7 @@ body
     list-style: circle
 
 /*******************************
-/***** Show Page ***************
+/***** Edit Page ***************
 
 .articleform
   display: flex
@@ -136,4 +136,18 @@ body
 
   span
     color: $color_green
+
+/*********************************
+/************ Show Page **********
+
+.article_theme
+
+  a
+    text-decoration: none
+    padding: 5px
+    background-color: $color_light_red
+
+    &:hover
+      background-color: $color_red
+
 

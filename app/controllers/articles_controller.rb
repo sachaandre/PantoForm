@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
-    @theme = @article.themes
+    @theme = @article.theme_ids
   end
 
   # GET /articles/new

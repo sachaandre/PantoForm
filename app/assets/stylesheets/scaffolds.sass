@@ -1,10 +1,11 @@
 $font-text: 'Cormorant Garamond', serif
 $title: 'PT Sans', sans-serif
-$color_red: #e43725
+$color_red: #FF9C1C
 $color_white: #fff
-$color_green: #2ecc71
+$color_green: #1CAFFF
 $color_grey: #333
 $color_light_white: rgba(255,255,255,0.9)
+$color_light_red: rgba(255,99,217,0.65)
 
 body
   color: #fff
@@ -57,7 +58,9 @@ div
 
 
 #notice
-  color: green
+  color: $color_green
+  font-family: $title
+
 
 
 .field_with_errors
@@ -167,6 +170,11 @@ header
     margin-right: 20px
     font-family: $font-text
 
+.redh2
+  font-size: 28px
+  color: $color_grey
+  border-bottom: 3px solid $color_red
+  padding-bottom: 10px
 
 ////////////////////////////////////////////////////////////////////////////////
 //////////////         CONTENT                     /////////////////////////////

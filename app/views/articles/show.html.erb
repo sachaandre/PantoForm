@@ -31,7 +31,9 @@
 
 <p>
   <strong>Thèmes liés</strong>
-  <%=@article.theme_ids%>
+  <%@article.themes.each do |theme|%>
+    <span class ="article_theme"><%= link_to theme.full_theme, theme%></span>
+  <% end %>
 </p>
 
 <p>Voir les articles de <%= link_to @article.author.full_name, @article.author%></p>
