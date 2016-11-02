@@ -1,4 +1,5 @@
 class AuthorsController < ApplicationController
+  before_action :exists?, only: [:new]
   before_action :require_user, only: [:index, :show]
   before_action :set_author, only: [:show, :edit, :update, :destroy]
 
@@ -70,5 +71,10 @@ class AuthorsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def author_params
       params.require(:author).permit(:first_name, :last_name, :email, :password)
+    end
+
+    def exists?
+      redirect_to "/authors" unless
+      current_author == nil
     end
 end

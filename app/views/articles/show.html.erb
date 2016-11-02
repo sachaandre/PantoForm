@@ -38,5 +38,12 @@
 
 <p>Voir les articles de <%= link_to @article.author.full_name, @article.author%></p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
+<% if @article.author == current_author %>
+  <p class='button_crud'>
+    <%= link_to 'Editer', edit_article_path(@article) %>
+    <%= link_to 'Supprimer', @article, method: :delete, data: { confirm: 'Êtes vous sur ?' } %>
+  </p>
+<% end %>
+
+
 <%= link_to 'Back', articles_path %>

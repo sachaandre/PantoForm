@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
+  <h2 class="redh2">Index des articles</h2>
 
-<h2 class="redh2">Index des articles</h2>
-
+<span class="button_crud"><%= link_to "Créer un nouvel article", new_article_path%></span>
 <%= alphabetical_paginate @alphaParams%>
 <div id="pagination_table">
   <ul>
     <% @articles.each do |art| %>
-      <li><%= link_to art.fr_name, art %>  <%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <li><%= link_to art.fr_name, art %>  </li>
     <%end%>
   </ul>
 </div>
