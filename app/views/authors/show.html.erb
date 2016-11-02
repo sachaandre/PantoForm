@@ -10,5 +10,6 @@
 </ul>
 <% if @article.author == current_author %>
   <%= link_to 'Edit', edit_author_path(@author) %>
-<<%end%> |
+<%end%>
+ |
 <%= link_to 'Back', authors_path %>
