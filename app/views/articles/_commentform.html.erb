@@ -1,0 +1,22 @@
+<div class="articlecomment">
+<%= form_for(article) do |f| %>
+  <% if article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(article.errors.count, "erreur") %> n'a pas permis la sauvegarde de votre article</h2>
+
+      <ul>
+      <% article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Commentaire : " %>
+    <%= f.text_area :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Post comment"%>
+  </div>
+<% end %>

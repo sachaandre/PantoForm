@@ -45,5 +45,14 @@
   </p>
 <% end %>
 
-
+<div id="comment_admin">
+  <% if current_author.is_admin?%>
+    <p>
+      <%= render 'commentform', article: @article %>
+    </p>
+  <%else%>
+      <strong>Le commentaire d'Eric : </strong>
+      <%= @article.comment%>
+  <%end%>
+</div>
 <%= link_to 'Back', articles_path %>
