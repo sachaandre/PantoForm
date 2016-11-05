@@ -4,7 +4,9 @@ class Author < ApplicationRecord
 
   has_many :articles
 
-  ADMIN = "CATTELAIN"
+  ADMIN_LAST = "CATTELAIN"
+  ADMIN_MAIL = "eric.cattelain@orange.fr"
+
 
   # validates :last_name, :presence => true
 
@@ -14,6 +16,7 @@ class Author < ApplicationRecord
 
   def is_admin?
     last_name == ADMIN
+    email == ADMIN_MAIL
   end
 
 end
