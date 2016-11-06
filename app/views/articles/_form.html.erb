@@ -44,8 +44,8 @@
 
   <div class="field">
     <%= f.label "Thèmes de la Pantopie se rapportant à cet article" %>
-    <%= f.collection_select(:theme_ids, Theme.all, :id, :full_theme, {include_blank: true}, {:multiple=>true, size: "3"})%>
-    <%= f.collection_select(:theme_ids, Theme.all, :id, :full_theme, {include_blank: true}, {:multiple=>true, size: "3"})%>
+    <%= f.label "(Vous pouvez en choisir plusieurs en maintenant la touche 'Ctrl'(Windows/Linux) où la touche 'Cmd' (Mac))" %>
+    <%= f.collection_select(:theme_ids, Theme.all, :id, :full_theme, {include_blank: true}, {:multiple=>true, size: "5"})%>
   </div>
 
 
