@@ -15,7 +15,7 @@ class Author < ApplicationRecord
   end
 
   def is_admin?
-    last_name == ADMIN
+    last_name == ADMIN_LAST
     email == ADMIN_MAIL
   end
 
