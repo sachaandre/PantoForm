@@ -1,0 +1,41 @@
+@import '../variables/*'
+
+
+.links
+    display: flex
+    flex-flow: column nowrap
+    justify-content: center
+
+    li
+        display: flex
+        flex-flow: column nowrap
+        justify-content: center
+        color: $white
+        text-decoration: none
+        height: $header-element-height
+        width: $header-element-width
+        text-align: center
+        vertical-align: center
+        list-style: none
+        margin-left: -40px
+
+        &::before                    
+            content: ""
+            display: block
+            position: absolute
+            width: 74%
+            left: 13%
+            margin-top: -17px
+            border-top: 1px solid $light_grey
+        
+        &:first-child:before
+            margin-top: -18px
+        
+        a
+            color: $white
+            text-decoration: none
+        
+        img
+            display: block
+            width: fit-content
+            margin: 0 auto

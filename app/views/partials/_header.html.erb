@@ -1,0 +1,17 @@
+<header>
+    <h1><%= image_tag 'logo-white.png'%></h1>
+
+      <ul class="links">
+        <li class="bg-hover-red"><%= image_tag 'newspaper.png'%><%= link_to 'Articles', articles_path%></li>
+        <li class="bg-hover-blue"><%= image_tag 'avatar.png'%><%= link_to 'Auteurs', authors_path%></li>
+        <li class="bg-hover-orange"><%= image_tag 'globe.png'%><%= link_to 'Themes', themes_path%></li>
+      </ul>
+
+      <div class="log">
+        <% if current_author %>
+            <%= 'Bienvenue ' + current_author.full_name %>
+            <%= link_to "<i class='fa fa-sign-out fa-2x'></i>".html_safe, logout_path, method: "delete" %>
+        <% end %>
+      </div>
+
+  </header>
