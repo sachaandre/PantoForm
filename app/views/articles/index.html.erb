@@ -1,17 +1,23 @@
+<div class="titlebar">
+  <div class="toptitle">
+    <h2 class="redh2">Les Articles</h2>
+    <%= link_to "Créer un nouvel article", new_article_path, class: "button-crud"%>
+  </div>
+  <%= alphabetical_paginate @alphaParams%>
+</div>
 
-<p id="notice"><%= notice %></p>
-  <h2 class="redh2">Index des articles</h2>
-
-<span class="button_crud"><%= link_to "Créer un nouvel article", new_article_path%></span>
-<%= alphabetical_paginate @alphaParams%>
 <div id="pagination_table">
-  <ul>
-    <% @articles.each do |art| %>
-      <li><%= link_to art.fr_name, art %>  </li>
-    <%end%>
-  </ul>
+  <div class="pagecontent">
+      <% @articles.each do |art| %>
+        <div class="block <%= art.random_color%>">
+          <div class="block-margin">
+            <span class="block-author"><%= art.author.full_name%></span>
+            <span class="block-content"><%= art.fr_name%></span>
+            <%= link_to "Lire la suite", art, class: "block-link"%>
+          </div>
+        </div>
+      <%end%>
+  </div>
 </div>
 
 <br>
-
-

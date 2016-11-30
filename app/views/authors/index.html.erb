@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<div class="titlebar">
+    <div class="toptitle">
+      <h2 >Liste des différents auteurs</h2>
+    </div>
+</div>
 
-  <h2 class="redh2">Liste des différents auteurs</h2>
-  <p>
-    <ul>
+<div class="pagecontent">
       <% @authors.each do |a| %>
-        <li><%= link_to a.full_name, a %></li>
+        <div class="block <%= a.random_color%>">
+          <div class="block-margin">
+            <span class="block-content"><%= a.full_name%></span>
+            <%= link_to "Voir le profil", a, class:"block-link" %>
+          </div>
+        </div>
       <% end %>
-    </ul>
-  </p>
-
-
+</div>
