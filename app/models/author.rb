@@ -4,11 +4,11 @@ class Author < ApplicationRecord
 
   has_many :articles
 
+  validates :first_name, :last_name, :email, presence: {message:'Tu n\'as pas rempli ce champs, vilain garnement !'}
+  validates :email, uniqueness: {message: 'Cet email est déjà pris, dommage.'}
   ADMIN_LAST = "CATTELAIN"
   ADMIN_MAIL = "eric.cattelain@orange.fr"
 
-
-  # validates :last_name, :presence => true
 
   def full_name
     first_name + ' ' + last_name

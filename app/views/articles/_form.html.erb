@@ -1,30 +1,22 @@
 <div class="articleform">
 <%= form_for(article) do |f| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "erreur") %> n'a pas permis la sauvegarde de votre article</h2>
-
-      <ul>
-      <% article.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label "Nom du sujet en Français" %>
     <%= f.text_field :fr_name %>
+    <%= f.error_tag :fr_name %>
   </div>
 
   <div class="field">
     <%= f.label "Nom du sujet en Anglais" %>
     <%= f.text_field :en_name %>
+    <%= f.error_tag :en_name%>
   </div>
 
   <div class="field">
     <%= f.label "Nom du sujet en Chinois (Caractères)" %>
     <%= f.text_field :zh_name %>
+    <%= f.error_tag :zh_name%>
   </div>
 
   <div class="field">
