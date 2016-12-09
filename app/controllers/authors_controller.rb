@@ -33,7 +33,7 @@ class AuthorsController < ApplicationController
         session[:author_id] = @author.id
         redirect_to '/'
       else
-        redirect_to '/signup'
+        render :new 
       end
   end
 
