@@ -5,6 +5,10 @@ class Article < ApplicationRecord
   has_many :article_themes
   has_many :themes, through: :article_themes
 
+  validates :fr_name, presence: {message: "Cet article manque de nom en français"}
+  validates :en_name, presence: {message: "Cet article manque de nom en anglais"}
+  validates :zh_name, presence: {message: "Cet article manque de nom en chinois"}
+
   def set_author!(author)
     self.author_id = author_id
 

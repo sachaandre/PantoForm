@@ -1,0 +1,83 @@
+@import '../variables/*'
+
+.articleblock
+  height: 100vh
+  padding: 10vh 5vw 0vh 5vw
+
+  .articleform
+    padding: 20px
+    background: $white
+
+
+    h2
+      font-size: 26px
+      margin: 10px
+      color: $grey
+
+    .right-field
+      width: 45%
+      float: right
+
+    .left-field
+      width: 45%
+      float: left
+
+    form
+
+      .field
+        margin: 5px 0px
+
+        input
+          padding: 0px 10px
+          width: 90%
+          height: 45px
+          border: 1px solid lighten($grey, 10)
+          transition: all 0.3s
+
+          &:focus
+            border-radius: 10px
+            background-color: #efffef
+
+        textarea
+          padding: 10px
+          width: 96%
+          height: 200px
+          border: 1px solid lighten($grey, 10)
+          transition: all 0.3s
+
+          &:focus
+            border-radius: 10px
+            background-color: #f9f9f9
+
+      .checkbox_list
+        margin-bottom: 5px
+        display: flex
+        height: 100px
+        width: 94%
+        flex-flow: column wrap
+        overflow-x: scroll
+        border: 1px solid lighten($grey, 10)
+
+    .bottom_form
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-around
+      align-items: center
+
+      a
+        color: $grey
+        font-size: 14px
+
+      input
+        color: #ffffff
+        display: block
+        background-color: $green
+        vertical-align: center
+        padding: 10px
+        text-decoration: none
+        transition: all 0.2s
+        margin-left: 20px
+        border: none
+
+        &:hover
+          background-color: darken($green, 10)

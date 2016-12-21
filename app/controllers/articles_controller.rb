@@ -61,7 +61,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'AVous venez de supprimer votre article' }
+      format.html { redirect_to articles_url, notice: 'Vous venez de supprimer votre article' }
       format.json { head :no_content }
     end
   end

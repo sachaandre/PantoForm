@@ -1,58 +1,63 @@
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
 <!--<p>
   <strong>Nom de l'Auteur</strong>
    @author.first_name
 </p>-->
-<div class="banner">
-  <h2><%= @article.fr_name %></h2>
+<div class="titlebar">
+  <div class="toptitle">
+    <h2><%= @article.fr_name %></h2>
+    <% if @article.author == current_author %>
+      <p class='button_crud'>
+        <%= link_to 'Editer', edit_article_path(@article) %>
+        <%= link_to 'Supprimer', @article, method: :delete, data: { confirm: 'Êtes vous sur ?' } %>
+      </p>
+    <% end %>
+  </div>
+</div>
 
-  <p>
+<div class="pagecontent">
+
+
+  <div class="sideblock">
     <strong>Nom Anglais</strong>
     <%= @article.en_name %>
     <strong>Nom Chinois</strong>
     <%= @article.zh_name %>
+    <strong>Dates Clés</strong>
+    <%= @article.date %>
+  </div>
+
+  <p>
+    <strong>Indfénition</strong>
+    <%= @article.content %>
+    <div id="comment_admin">
+      <% if current_author.is_admin?%>
+        <p>
+          <%= render 'commentform', article: @article %>
+        </p>
+      <%else%>
+          <strong>Le commentaire d'Eric : </strong>
+          <%= @article.comment%>
+      <%end%>
+    </div>
   </p>
-</div>
-<p>
-  <strong>Dates Clés</strong>
-  <%= @article.date %>
-</p>
 
-<p>
-  <strong>Indfinition</strong>
-  <%= @article.content %>
-</p>
-
-<p>
-  <strong>Tags</strong>
-  <%= @article.tags %>
-</p>
-
-<p>
-  <strong>Thèmes liés</strong>
-  <%@article.themes.each do |theme|%>
-    <span class ="article_theme"><%= link_to theme.full_theme, theme%></span>
-  <% end %>
-</p>
-
-<p>Voir les articles de <%= link_to @article.author.full_name, @article.author%></p>
-
-<% if @article.author == current_author %>
-  <p class='button_crud'>
-    <%= link_to 'Editer', edit_article_path(@article) %>
-    <%= link_to 'Supprimer', @article, method: :delete, data: { confirm: 'Êtes vous sur ?' } %>
+  <p>
+    <strong>Tags</strong>
+    <%= @article.tags %>
   </p>
-<% end %>
 
-<div id="comment_admin">
-  <% if current_author.is_admin?%>
-    <p>
-      <%= render 'commentform', article: @article %>
-    </p>
-  <%else%>
-      <strong>Le commentaire d'Eric : </strong>
-      <%= @article.comment%>
-  <%end%>
+  <p>
+    <strong>Thèmes liés</strong>
+    <%@article.themes.each do |theme|%>
+      <span class ="article_theme"><%= link_to theme.full_theme, theme%></span>
+    <% end %>
+  </p>
+
+  <p>Voir les articles de <%= link_to @article.author.full_name, @article.author%></p>
 </div>
+
+
+
 <%= link_to 'Back', articles_path %>
