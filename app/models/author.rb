@@ -10,6 +10,12 @@ class Author < ApplicationRecord
   ADMIN_MAIL = "eric.cattelain@orange.fr"
 
 
+<<<<<<< HEAD
+=======
+  validates :last_name, :first_name, :email, presence: {message: "Il faut remplir ces champs, chenapan !"}
+  validates :email, uniqueness: {message: "Cette adresse mail est déjà prise, désolé."}
+
+>>>>>>> StykingV2
   def full_name
     first_name + ' ' + last_name
   end
@@ -19,4 +25,21 @@ class Author < ApplicationRecord
     email == ADMIN_MAIL
   end
 
+  def random_color
+    rdm = rand(5)
+    case rdm
+    when 0
+      clr="border-top-red"
+    when 1
+      clr="border-top-orange"
+    when 2
+      clr="border-top-green"
+    when 3
+      clr="border-top-purple"
+    when 4
+      clr="border-top-blue"
+    else
+      clr="border-top-grey"
+    end
+  end
 end

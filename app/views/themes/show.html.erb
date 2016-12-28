@@ -1,16 +1,18 @@
-<p id="notice"><%= notice %></p>
 
-<div class="banner">
-  <h2><%= @theme.full_theme %></h2>
+<div class="titlebar">
+  <div class="toptitle">
+    <h2>Liste des articles de <%= @theme.full_theme %></h2>
+  </div>
 </div>
 
-<p>
-  <strong>Articles Associés à ce thème</strong>
-  <ul>
-    <%@theme.articles.each do |t|%>
-      <li><%= link_to t.fr_name, t%></li>
-    <%end%>
+<div class="pagecontent bg-2">
+    <% @theme.articles.each do |a|%>
+    <div class="block <%=a.random_color%>">
+      <div class="block-margin">
+          <span class="block-content"><%=a.fr_name%></span>
+          <%= link_to "Lire l'article", a, class: "block-link"%>
+      </div>
+    </div>
+    <% end %>
   </ul>
-</p>
-
-<%= link_to 'Back', themes_path %>
+</div>

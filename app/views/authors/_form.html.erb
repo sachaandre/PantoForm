@@ -1,4 +1,5 @@
 <div class="signform">
+<<<<<<< HEAD
   <%= form_for(author) do |f| %>
   <div>
     <%= f.label 'Prénom' %>
@@ -31,6 +32,43 @@
 
   <div>
     <%= f.submit "Créer un compte", :class => "form_btn" %>
+=======
+  <div class="form">
+
+    <h2>
+      <% if current_page?('/signup')%>
+        Insription
+      <% else %>
+        Editer votre profil
+      <%end%>
+    </h2>
+
+    <%= form_for(author) do |f|%>
+      <div>
+        <%= f.text_field :first_name, :placeholder => 'Prénom', :class => "field" %>
+        <%= f.error_tag :first_name%>
+      </div>
+
+      <div>
+        <%= f.text_field :last_name, :placeholder => 'Nom', :class => "field" %>
+        <%= f.error_tag :last_name%>
+      </div>
+
+      <div>
+        <%= f.email_field :email, :placeholder => 'Adresse Mail', :class => "field" %>
+        <%= f.error_tag :email%>
+      </div>
+      <div>
+        <%= f.password_field :password, :placeholder => 'Mot de Passe', :class => "field" %>
+      </div>
+      <div>
+        <%= f.password_field :password_confirmation, :placeholder => 'Confirmez votre mot de passe', :class => "field" %>
+      </div>
+
+      <div>
+        <%= f.submit "Créer un compte", :class => "form_btn" %>
+      </div>
+    <% end %>
+>>>>>>> StykingV2
   </div>
-<% end %>
 </div>

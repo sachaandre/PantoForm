@@ -33,7 +33,11 @@ class AuthorsController < ApplicationController
         session[:author_id] = @author.id
         redirect_to '/'
       else
+<<<<<<< HEAD
         render :new
+=======
+        render :new 
+>>>>>>> StykingV2
       end
   end
 

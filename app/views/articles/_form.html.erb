@@ -1,7 +1,22 @@
-<div class="articleform">
-<%= form_for(article) do |f| %>
 
+<div class="articleform">
+<<<<<<< HEAD
+<%= form_for(article) do |f| %>
+=======
+>>>>>>> StykingV2
+
+  <h2>
+    <% if current_page?('/articles/new')%>
+      Créer un article
+    <% else %>
+      Editer un article
+    <%end%>
+  </h2>
+
+<%= form_for(article) do |f| %>
+<div class="left-field">
   <div class="field">
+<<<<<<< HEAD
     <%= f.label "Nom du sujet en Français" %>
     <%= f.text_field :fr_name %>
     <%= f.error_tag :fr_name %>
@@ -17,34 +32,49 @@
     <%= f.label "Nom du sujet en Chinois (Caractères)" %>
     <%= f.text_field :zh_name %>
     <%= f.error_tag :zh_name%>
+=======
+    <%= f.text_field :fr_name, {placeholder: "Nom en Français"} %>
+    <%= f.error_tags :fr_name%>
   </div>
 
   <div class="field">
-    <%= f.label "Dates clées du sujet" %>
-    <%= f.text_field :date %>
+    <%= f.text_field :en_name, {placeholder: "Nom en Anglais"} %>
+    <%= f.error_tags :en_name%>
   </div>
 
   <div class="field">
-    <%= f.label "(In)Définition de votre sujet" %>
-    <%= f.text_area :content %>
+    <%= f.text_field :zh_name, {placeholder: "Nom en Chinois"} %>
+    <%= f.error_tags :zh_name%>
+>>>>>>> StykingV2
+  </div>
+</div>
+
+<div class="right-field">
+  <div class="field">
+    <%= f.text_field :date, {placeholder: "Dates clés"} %>
   </div>
 
   <div class="field">
-    <%= f.label "Quelques tags ? (à séparer avec quelques virgules !)" %>
-    <%= f.text_field :tags %>
+    <%= f.text_field :tags, {placeholder: "Quelques tags ? (à séparer avec quelques virgules !)"} %>
   </div>
+
+  <div class="checkbox_list">
+    <%= f.collection_check_boxes(:theme_ids, Theme.all, :id, :full_theme, {}, {class: "checkbox", :multiple=>true}) do |b|%>
+      <%= b.label{b.check_box + b.text} %>
+    <%end%>
+  </div>
+</div>
 
   <div class="field">
-    <%= f.label "Thèmes de la Pantopie se rapportant à cet article" %>
-    <%= f.label "(Vous pouvez en choisir plusieurs en maintenant la touche 'Ctrl'(Windows/Linux) où la touche 'Cmd' (Mac))" %>
-    <%= f.collection_select(:theme_ids, Theme.all, :id, :full_theme, {include_blank: true}, {:multiple=>true, size: "5"})%>
+    <%= f.text_area :content, {placeholder: "(In)définition de votre sujet"} %>
   </div>
 
+  <div class="bottom_form">
 
-
-  <div class="actions">
-    <%= f.submit %>
+    <%= link_to 'Retour à l\'index', articles_path, id: "backlink" %>
+    <div class="button-crud">
+      <%= f.submit 'Publier' %>
+    </div>
   </div>
-
 <% end %>
 </div>

@@ -1,15 +1,22 @@
-<p id="notice"><%= notice %></p>
-<div class="banner">
-  <h2>Profil de <%= @author.full_name %></h2>
+
+
+<div class="titlebar">
+  <div class="toptitle">
+    <h2>Liste des articles de <%= @author.full_name %></h2>
+      <% if @author == current_author %>
+        <%= link_to 'Editer son profil', edit_author_path(@author), class: "button-crud" %>
+      <%end%>
+  </div>
 </div>
-<h2>Liste d'articles de <%= @author.full_name%></h2>
-<ul>
-  <% @author.articles.each do |a|%>
-    <li><%= link_to a.fr_name, a%></li>
-  <% end %>
-</ul>
-<% if @author == current_author %>
-  <%= link_to 'Edit', edit_author_path(@author) %>
-<%end%>
- |
-<%= link_to 'Back', authors_path %>
+
+<div class="pagecontent bg-1">
+    <% @author.articles.each do |a|%>
+    <div class="block <%=a.random_color%>">
+      <div class="block-margin">
+          <span class="block-content"><%=a.fr_name%></span>
+          <%= link_to "Lire l'article", a, class: "block-link"%>
+      </div>
+    </div>
+    <% end %>
+  </ul>
+</div>

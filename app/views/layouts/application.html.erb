@@ -3,37 +3,26 @@
   <head>
     <title>PantoForm</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|PT+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Source+Serif+Pro" rel="stylesheet">
   </head>
 
   <body>
-
-    <div class="login_bar">
-      <% if current_author %>
-        <ul>
-          <li><%= 'Bienvenue ' + current_author.full_name %></li>
-          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-        </ul>
-      <% else %>
-        <ul>
-          <li><%= link_to "Login", 'signin' %></a></li>
-          <li><%= link_to "Signup", 'signup' %></a></li>
-        </ul>
-      <% end %>
-    </div>
-    <header>
-      <nav>
-        <%= link_to 'Articles', articles_path%>
-        <%= link_to 'Auteurs', authors_path%>
-        <%= link_to 'Themes', themes_path%>
-      </nav>
-      <h1>PantoForm</h1>
-    </header>
     <div class="content">
+      <div class="responsive-bloc">
+        <p>
+          Ce site n'est pas disponible dans cette taille d'écran
+          <br>
+          Essayez d'utiliser ce site avec un ordi par exemple, je pense que ça va marcher
+        </p>
+
+        <%= image_tag("logo-black.png")%>
+      </div>
+
+      <%= render '/partials/header'%>
       <%= yield %>
+
     </div>
   </body>
 </html>

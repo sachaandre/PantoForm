@@ -1,0 +1,33 @@
+@import "../variables/*"
+
+
+.block
+  width: 25vw
+  height: 25vh
+  background: $white
+  margin: 2vh 2vw
+  margin-bottom: 0
+
+
+.block-margin
+  width: 90%
+  height: 85%
+  margin: 25px
+  display: flex
+  flex-flow: column nowrap
+
+  .block-author
+    flex: 1
+    color: lighten($grey, 15)
+    display: flex
+    align-items: flex-end
+    text-transform: capitalize
+
+  .block-content
+    flex: 4
+    font-family: $serif
+    font-size: 2em
+
+  .block-link
+    flex: 3
+    color: lighten($grey, 10)
