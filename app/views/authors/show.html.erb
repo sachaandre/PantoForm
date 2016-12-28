@@ -3,11 +3,9 @@
 <div class="titlebar">
   <div class="toptitle">
     <h2>Liste des articles de <%= @author.full_name %></h2>
-    <span class="button-crud">
       <% if @author == current_author %>
-        <%= link_to 'Edit', edit_author_path(@author) %>
+        <%= link_to 'Editer son profil', edit_author_path(@author), class: "button-crud" %>
       <%end%>
-    </span>
   </div>
 </div>
 
