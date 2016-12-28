@@ -17,7 +17,7 @@ class Author < ApplicationRecord
 
   def is_admin?
     last_name == ADMIN_LAST
-    # email == ADMIN_MAIL
+    email == ADMIN_MAIL
   end
 
   def random_color

@@ -10,8 +10,19 @@
 
   <body>
     <div class="content">
+      <div class="responsive-bloc">
+        <p>
+          Ce site n'est pas disponible dans cette taille d'écran
+          <br>
+          Essayez d'utiliser ce site avec un ordi par exemple, je pense que ça va marcher
+        </p>
+
+        <%= image_tag("logo-black.png")%>
+      </div>
+
       <%= render '/partials/header'%>
       <%= yield %>
+
     </div>
   </body>
 </html>
