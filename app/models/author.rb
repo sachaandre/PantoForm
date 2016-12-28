@@ -9,7 +9,7 @@ class Author < ApplicationRecord
 
 
   validates :last_name, :first_name, :email, presence: {message: "Il faut remplir ces champs, chenapan !"}
-  validates :email, uniqueness: {message: "Cette adresse mail est déjà prise, déso."}
+  validates :email, uniqueness: {message: "Cette adresse mail est déjà prise, désolé."}
 
   def full_name
     first_name + ' ' + last_name
@@ -17,7 +17,7 @@ class Author < ApplicationRecord
 
   def is_admin?
     last_name == ADMIN_LAST
-    email == ADMIN_MAIL
+    # email == ADMIN_MAIL
   end
 
   def random_color

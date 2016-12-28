@@ -8,56 +8,52 @@
   <div class="toptitle">
     <h2><%= @article.fr_name %></h2>
     <% if @article.author == current_author %>
-      <p class='button_crud'>
-        <%= link_to 'Editer', edit_article_path(@article) %>
-        <%= link_to 'Supprimer', @article, method: :delete, data: { confirm: 'Êtes vous sur ?' } %>
-      </p>
+        <%= link_to 'Editer', edit_article_path(@article), class: "button-crud" %>
+        <%= link_to 'Supprimer', @article, method: :delete, data: { confirm: 'Êtes vous sur ?' }, class: "button-crud" %>
     <% end %>
   </div>
 </div>
 
-<div class="pagecontent">
+<div class="pagecontent bg-3">
 
+<div class="blocks">
 
-  <div class="sideblock">
-    <strong>Nom Anglais</strong>
-    <%= @article.en_name %>
-    <strong>Nom Chinois</strong>
-    <%= @article.zh_name %>
-    <strong>Dates Clés</strong>
-    <%= @article.date %>
-  </div>
-
-  <p>
-    <strong>Indfénition</strong>
+  <div class="mainblock border-top-red">
+    <strong>Indfénition</strong> <br>
     <%= @article.content %>
     <div id="comment_admin">
-      <% if current_author.is_admin?%>
-        <p>
+      <% if current_author.is_admin? %>
           <%= render 'commentform', article: @article %>
-        </p>
       <%else%>
-          <strong>Le commentaire d'Eric : </strong>
+          <strong>Le commentaire d'Eric : </strong> <br>
           <%= @article.comment%>
       <%end%>
     </div>
-  </p>
+  </div>
 
-  <p>
-    <strong>Tags</strong>
-    <%= @article.tags %>
-  </p>
+  <div class="sideblock border-top-red">
+    <div class="barre">
+      <strong>Nom Anglais</strong>
+      <%= @article.en_name %> <br>
+      <strong>Nom Chinois</strong>
+      <%= @article.zh_name %> <br>
+    </div>
+    <div class="barre">
+      <strong>Dates Clés</strong>
+      <%= @article.date %> <br>
+      <strong>Tags</strong>
+      <%= @article.tags %> <br>
+    </div>
+    <div class="barre">
+      <strong>Thèmes liés</strong>
+      <%@article.themes.each do |theme|%>
+        <span class ="article_theme"><%= link_to theme.full_theme, theme%></span>
+      <% end %>
+    </div>
+    <div class="barre">
+      <p><strong>Auteur </strong><%= link_to @article.author.full_name, @article.author%></p>
+      <%= link_to 'Retour à l\'index', articles_path %>
+    </div>
+  </div>
 
-  <p>
-    <strong>Thèmes liés</strong>
-    <%@article.themes.each do |theme|%>
-      <span class ="article_theme"><%= link_to theme.full_theme, theme%></span>
-    <% end %>
-  </p>
-
-  <p>Voir les articles de <%= link_to @article.author.full_name, @article.author%></p>
 </div>
-
-
-
-<%= link_to 'Back', articles_path %>
