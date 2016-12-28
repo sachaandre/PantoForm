@@ -5,13 +5,10 @@ class Article < ApplicationRecord
   has_many :article_themes
   has_many :themes, through: :article_themes
 
-<<<<<<< HEAD
-  validates :fr_name, :en_name, :zh_name, presence: {message: 'N\'oublie pas de mettre un nom d\'article!'}
-=======
   validates :fr_name, presence: {message: "Il manque un nom en français !"}
   validates :en_name, presence: {message: "Il manque un nom en anglais !"}
   validates :zh_name, presence: {message: "Il manque un nom en chinois !"}
->>>>>>> StykingV2
+
 
   def set_author!(author)
     self.author_id = author_id

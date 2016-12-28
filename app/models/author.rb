@@ -10,12 +10,9 @@ class Author < ApplicationRecord
   ADMIN_MAIL = "eric.cattelain@orange.fr"
 
 
-<<<<<<< HEAD
-=======
   validates :last_name, :first_name, :email, presence: {message: "Il faut remplir ces champs, chenapan !"}
   validates :email, uniqueness: {message: "Cette adresse mail est déjà prise, désolé."}
 
->>>>>>> StykingV2
   def full_name
     first_name + ' ' + last_name
   end

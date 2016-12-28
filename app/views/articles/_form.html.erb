@@ -1,9 +1,5 @@
 
 <div class="articleform">
-<<<<<<< HEAD
-<%= form_for(article) do |f| %>
-=======
->>>>>>> StykingV2
 
   <h2>
     <% if current_page?('/articles/new')%>
@@ -16,23 +12,7 @@
 <%= form_for(article) do |f| %>
 <div class="left-field">
   <div class="field">
-<<<<<<< HEAD
-    <%= f.label "Nom du sujet en Français" %>
-    <%= f.text_field :fr_name %>
-    <%= f.error_tag :fr_name %>
-  </div>
 
-  <div class="field">
-    <%= f.label "Nom du sujet en Anglais" %>
-    <%= f.text_field :en_name %>
-    <%= f.error_tag :en_name%>
-  </div>
-
-  <div class="field">
-    <%= f.label "Nom du sujet en Chinois (Caractères)" %>
-    <%= f.text_field :zh_name %>
-    <%= f.error_tag :zh_name%>
-=======
     <%= f.text_field :fr_name, {placeholder: "Nom en Français"} %>
     <%= f.error_tags :fr_name%>
   </div>
@@ -45,7 +25,6 @@
   <div class="field">
     <%= f.text_field :zh_name, {placeholder: "Nom en Chinois"} %>
     <%= f.error_tags :zh_name%>
->>>>>>> StykingV2
   </div>
 </div>
 
